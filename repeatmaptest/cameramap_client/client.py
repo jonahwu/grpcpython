@@ -6,7 +6,9 @@ import cameramap_pb2
 import cameramap_pb2_grpc
 
 def run():
-    channel = grpc.insecure_channel('localhost:50051')
+    #channel = grpc.insecure_channel('localhost:50051')
+    channel = grpc.insecure_channel('dotnetcoresample.service:50051')
+    #channel = grpc.insecure_channel('dotnetcoresample.service')
     stub = cameramap_pb2_grpc.CameramapStub(channel)
     data =[]
     data.append({'Name': 'Zara', 'Age': '7', 'Class': 'First'})
